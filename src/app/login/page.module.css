@@ -1,0 +1,303 @@
+/* ===== LOGIN / SIGNUP PAGE ===== */
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  background: var(--background);
+}
+
+/* Background Orbs */
+.orbPrimary {
+  position: fixed;
+  top: -10%;
+  left: -10%;
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  background: var(--primary);
+  filter: blur(120px);
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.orbSecondary {
+  position: fixed;
+  bottom: -10%;
+  right: -10%;
+  width: 40%;
+  height: 40%;
+  border-radius: 50%;
+  background: var(--secondary);
+  filter: blur(120px);
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Header */
+.header {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-headline);
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: #fff;
+}
+
+.helpLink {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 700;
+  color: var(--primary);
+  transition: color 0.2s ease;
+}
+
+.helpLink:hover {
+  color: #fff;
+}
+
+/* Main */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  z-index: 10;
+}
+
+/* Card */
+.card {
+  width: 100%;
+  max-width: 480px;
+  background: rgba(25, 37, 64, 0.4);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  padding: 2.5rem 3rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 32px 64px -12px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(64, 72, 93, 0.1);
+}
+
+.cardHeader {
+  margin-bottom: 2.5rem;
+}
+
+.cardTitle {
+  font-family: var(--font-headline);
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.cardSub {
+  color: var(--on-surface-variant);
+  font-size: 0.9375rem;
+}
+
+/* Form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--primary);
+}
+
+.labelRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.forgotLink {
+  font-size: 0.75rem;
+  color: var(--on-surface-variant);
+  transition: color 0.2s ease;
+}
+
+.forgotLink:hover {
+  color: var(--primary);
+}
+
+.inputWrap {
+  position: relative;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.125rem;
+  color: var(--outline);
+  pointer-events: none;
+}
+
+.input {
+  width: 100%;
+  background: var(--surface-container-lowest);
+  border: 1px solid rgba(64, 72, 93, 0.2);
+  border-radius: 0.75rem;
+  padding: 1rem 1rem 1rem 3rem;
+  color: var(--on-surface);
+  font-size: 0.9375rem;
+  transition: all 0.3s ease;
+}
+
+.input::placeholder {
+  color: var(--outline);
+}
+
+.input:focus {
+  border-color: rgba(129, 233, 255, 0.4);
+  box-shadow: 0 0 0 3px rgba(129, 233, 255, 0.08);
+}
+
+/* Submit */
+.submitBtn {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: var(--on-primary);
+  font-family: var(--font-headline);
+  font-weight: 700;
+  font-size: 1rem;
+  box-shadow: 0 8px 24px -4px rgba(129, 233, 255, 0.1);
+  transition: all 0.2s ease;
+}
+
+.submitBtn:hover {
+  transform: scale(1.01);
+  box-shadow: 0 12px 32px -4px rgba(129, 233, 255, 0.2);
+}
+
+.submitBtn:active {
+  transform: scale(0.98);
+}
+
+/* Divider */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.dividerLine {
+  flex: 1;
+  height: 1px;
+  background: rgba(64, 72, 93, 0.1);
+}
+
+.dividerText {
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--outline);
+  white-space: nowrap;
+}
+
+/* Social */
+.socialGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.socialBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(64, 72, 93, 0.1);
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  transition: background 0.2s ease;
+}
+
+.socialBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Toggle */
+.toggle {
+  margin-top: 2.5rem;
+  text-align: center;
+  color: var(--on-surface-variant);
+  font-size: 0.9375rem;
+}
+
+.toggleBtn {
+  color: var(--primary);
+  font-weight: 600;
+  margin-left: 0.25rem;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.toggleBtn:hover {
+  text-decoration: underline;
+  text-decoration-color: rgba(129, 233, 255, 0.3);
+  text-underline-offset: 4px;
+}
+
+/* Footer links */
+.footerLinks {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.footerLinks a {
+  font-size: 0.75rem;
+  color: var(--outline);
+  transition: color 0.2s ease;
+}
+
+.footerLinks a:hover {
+  color: var(--on-surface);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .card {
+    padding: 2rem 1.5rem;
+  }
+
+  .cardTitle {
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,357 @@
+/* ===== PRICING PAGE ===== */
+
+.main {
+  padding-top: 7rem;
+  padding-bottom: 4rem;
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.glowLeft {
+  position: absolute;
+  top: 0;
+  left: 25%;
+  width: 500px;
+  height: 500px;
+  background: rgba(129, 233, 255, 0.1);
+  filter: blur(120px);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.glowRight {
+  position: absolute;
+  bottom: 0;
+  right: 25%;
+  width: 600px;
+  height: 600px;
+  background: rgba(103, 156, 255, 0.05);
+  filter: blur(150px);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.title {
+  font-family: var(--font-headline);
+  font-size: clamp(2.25rem, 5vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: #fff;
+  line-height: 1.1;
+}
+
+.subtitle {
+  color: var(--on-surface-variant);
+  font-size: 1.125rem;
+  max-width: 640px;
+  line-height: 1.6;
+}
+
+/* Pricing Grid */
+.pricingGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 0 1.5rem;
+  align-items: stretch;
+}
+
+.card {
+  position: relative;
+  border-radius: 2rem;
+  transition: all 0.5s ease;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.cardInner {
+  background: rgba(25, 37, 64, 0.4);
+  backdrop-filter: blur(40px);
+  border: 1px solid rgba(64, 72, 93, 0.1);
+  border-radius: 2rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.cardHighlighted {
+  z-index: 10;
+  transform: scale(1.05);
+}
+
+.cardHighlighted:hover {
+  transform: scale(1.07);
+}
+
+.cardHighlighted .cardInner {
+  border-color: rgba(129, 233, 255, 0.2);
+  background: rgba(20, 31, 56, 0.8);
+  box-shadow: 0 0 40px -10px rgba(129, 233, 255, 0.2);
+}
+
+.cardGlow {
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border-radius: 2rem;
+  filter: blur(1px);
+  opacity: 0.25;
+  z-index: -1;
+  transition: opacity 0.5s ease;
+}
+
+.cardHighlighted:hover .cardGlow {
+  opacity: 0.5;
+}
+
+.badge {
+  position: absolute;
+  top: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: var(--on-primary);
+  padding: 0.25rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  z-index: 20;
+  white-space: nowrap;
+}
+
+.cardHeader {
+  margin-bottom: 2rem;
+}
+
+.planName {
+  font-family: var(--font-headline);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.planDesc {
+  color: var(--on-surface-variant);
+  font-size: 0.875rem;
+}
+
+.priceRow {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+  margin-bottom: 2rem;
+}
+
+.price {
+  font-family: var(--font-headline);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.period {
+  color: var(--on-surface-variant);
+}
+
+.featureList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex-grow: 1;
+  margin-bottom: 2rem;
+}
+
+.included,
+.excluded {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+}
+
+.included {
+  color: rgba(222, 229, 255, 0.9);
+}
+
+.excluded {
+  color: rgba(222, 229, 255, 0.4);
+}
+
+.ctaPrimary {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: var(--on-primary);
+  transition: all 0.2s ease;
+  font-size: 0.9375rem;
+}
+
+.ctaPrimary:hover {
+  box-shadow: 0 0 20px rgba(129, 233, 255, 0.4);
+}
+
+.ctaSecondary {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  background: rgba(25, 37, 64, 0.4);
+  border: 1px solid rgba(64, 72, 93, 0.2);
+  color: #fff;
+  transition: all 0.2s ease;
+  font-size: 0.9375rem;
+}
+
+.ctaSecondary:hover {
+  background: rgba(25, 37, 64, 0.6);
+}
+
+/* Trust Grid */
+.trustGrid {
+  margin-top: 6rem;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1rem;
+  height: 500px;
+}
+
+.trustCard {
+  background: rgba(25, 37, 64, 0.4);
+  backdrop-filter: blur(40px);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border: 1px solid rgba(64, 72, 93, 0.1);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.trustCard:hover {
+  transform: scale(1.02);
+}
+
+.trustLarge {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.trustBg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.2;
+  transition: transform 0.7s ease;
+}
+
+.trustCard:hover .trustBg {
+  transform: scale(1.05);
+}
+
+.trustContent {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.trustTitle {
+  font-family: var(--font-headline);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.trustDesc {
+  color: var(--on-surface-variant);
+  font-size: 0.875rem;
+  max-width: 320px;
+}
+
+.trustBigNum {
+  font-family: var(--font-headline);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.trustLabel {
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--on-surface-variant);
+}
+
+.trustAccent {
+  background: rgba(129, 233, 255, 0.05);
+  border-color: rgba(129, 233, 255, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .pricingGrid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .cardHighlighted {
+    transform: scale(1);
+  }
+
+  .cardHighlighted:hover {
+    transform: scale(1.02);
+  }
+
+  .trustGrid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    height: auto;
+  }
+
+  .trustLarge {
+    grid-column: span 2;
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 640px) {
+  .trustGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .trustLarge {
+    grid-column: span 1;
+  }
+}
